@@ -65,10 +65,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BiomeAttributes.cs" />
     <Compile Include="Assets\Scripts\Chunk.cs" />
+    <Compile Include="Assets\Scripts\DebugScreen.cs" />
     <Compile Include="Assets\Scripts\Noise.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\VoxelData.cs" />
     <Compile Include="Assets\Scripts\World.cs" />
+    <None Include="Assets\Fixes.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/program files/unity/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
