@@ -27,6 +27,8 @@ public class Toolbar : MonoBehaviour
 
         }
 
+        player.selectedBlockIndex = itemSlots[slotIndex].itemID;
+
     }
 
     private void Update()
@@ -66,3 +68,4 @@ public class ItemSlot
     public Image icon;
 
 }
+
