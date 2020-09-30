@@ -1,1 +1,5 @@
 #1: Debug Screen set to F5 (World.cs Line 52 [void update fun] )
+#2: In Chunk.cs -> UpdateSurroundingVoxels() Change 
+world.GetChunkFromVector3(currentVoxel + position).UpdateChunk();
+To
+world.GetChunkFromVector3(currentVoxel + position)._updateChunk();

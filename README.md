@@ -1,12 +1,11 @@
 # illeosia-lost_realm
 ## Minecraft Clone
 
-**Last updated:** *09:10:2020 04:54 AM*
+**Last updated:** *09:30:2020 04:05 PM*
 ## Changes:
-- [x] Added README.md
-- [x] Added gitignore
-- [x] Added transparent blocks
-- [x] Added Trees
+- [x] Added Inventory
+- [x] Added Toolbar
+- [x] Added Custom Lighting
 
 ## Project settings
 Change project folder name to **_`illeosia - lost realm`_** or else the project will be broken.
