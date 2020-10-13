@@ -1,5 +1,8 @@
-#1: Debug Screen set to F5 (World.cs Line 52 [void update fun] )
-#2: In Chunk.cs -> UpdateSurroundingVoxels() Change 
-world.GetChunkFromVector3(currentVoxel + position).UpdateChunk();
-To
-world.GetChunkFromVector3(currentVoxel + position)._updateChunk();
+#1: 
+In World.cs
+	In GetVoxel
+		Noise.Get2DPerlin(new Vector2(pos.x, pos.z), 12345, 2f) > 0.5f 
+		this is used to select index. randomize it using another function to get random value. Make more biomes.
+		Get index values.
+#2:
+

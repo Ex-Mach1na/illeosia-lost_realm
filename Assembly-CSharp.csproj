@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BiomeAttributes.cs" />
     <Compile Include="Assets\Scripts\Chunk.cs" />
+    <Compile Include="Assets\Scripts\ChunkLoadAnimations.cs" />
     <Compile Include="Assets\Scripts\CreativeInventory.cs" />
     <Compile Include="Assets\Scripts\DebugScreen.cs" />
     <Compile Include="Assets\Scripts\DragAndDropHandler.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Scripts\VoxelData.cs" />
     <Compile Include="Assets\Scripts\World.cs" />
     <None Include="Assets\Scripts\StandardBlockShader.shader" />
+    <None Include="Assets\Scripts\TransparentBlockShader.shader" />
     <None Include="Assets\Fixes and Notes.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/program files/unity/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
