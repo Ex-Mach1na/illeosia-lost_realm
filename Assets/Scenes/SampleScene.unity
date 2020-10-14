@@ -2482,13 +2482,13 @@ MonoBehaviour:
     version: 0.01
     viewDistance: 6
     enableThreading: 1
-    enableAnimatedChunks: 1
+    enableAnimatedChunks: 0
     mouseSensitivity: 1.4
-    seed: 89742
+    seed: 90000
   biomes:
-  - {fileID: 11400000, guid: 30216bc216146cc438d63195d63fda39, type: 2}
-  - {fileID: 11400000, guid: da0a54b51cb857941942a2261fe49d63, type: 2}
+  - {fileID: 11400000, guid: ddb34fb3ef1a9b94287d79f43667c21a, type: 2}
   - {fileID: 11400000, guid: c06ad01827153ad43a363a9541d39b18, type: 2}
+  - {fileID: 11400000, guid: 84a88c7f3b670c34980453bfce744888, type: 2}
   globalLightLevel: 0.5
   day: {r: 0.66180134, g: 0.94055414, b: 0.9811321, a: 0}
   night: {r: 0.029308653, g: 0.0016019973, b: 0.33962262, a: 0}

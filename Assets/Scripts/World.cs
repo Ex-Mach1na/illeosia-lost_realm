@@ -52,6 +52,8 @@ public class World : MonoBehaviour
     private void Start()
     {
 
+        Debug.Log("Generating new world using seed " + VoxelData.seed);
+
         //string jsonExport = JsonUtility.ToJson(settings);
         //Debug.Log(jsonExport);
 
@@ -60,7 +62,7 @@ public class World : MonoBehaviour
         string jsonImport = File.ReadAllText(Application.dataPath + "/settings.cfg");
         settings = JsonUtility.FromJson<Settings>(jsonImport);
 
-        Random.InitState(settings.seed);
+        Random.InitState(VoxelData.seed);
 
         Shader.SetGlobalFloat("minGlobalLightLevel", VoxelData.minLightLevel);
         Shader.SetGlobalFloat("maxGlobalLightLevel", VoxelData.maxLightLevel);
@@ -382,42 +384,52 @@ public class World : MonoBehaviour
         if (yPos == 0)
             return 1;
 
-        /*BIOME SELECTION PAS*/
+        /* BIOME SELECTION PASS*/
 
-        int solidGroundHeight=42;
+        int solidGroundHeight = 42;
         float sumOfHeights = 0f;
         int count = 0;
-        float strongestWeight = 0;
+        float strongestWeight = 0f;
         int strongestBiomeIndex = 0;
 
-        for(int i=0; i < biomes.Length; i++)
+        for (int i = 0; i < biomes.Length; i++)
         {
+
             float weight = Noise.Get2DPerlin(new Vector2(pos.x, pos.z), biomes[i].offset, biomes[i].scale);
-            //Keep track of which weight is strongest
-            if(weight > strongestWeight)
+
+            // Keep track of which weight is strongest.
+            if (weight > strongestWeight)
             {
+
                 strongestWeight = weight;
                 strongestBiomeIndex = i;
+
             }
 
+            // Get the height of the terrain (for the current biome) and multiply it by its weight.
             float height = biomes[i].terrainHeight * Noise.Get2DPerlin(new Vector2(pos.x, pos.z), 0, biomes[i].terrainScale) * weight;
 
-            if(height > 0)
+            // If the height value is greater 0 add it to the sum of heights.
+            if (height > 0)
             {
+
                 sumOfHeights += height;
                 count++;
+
             }
-            
+
         }
 
+        // Set biome to the one with the strongest weight.
         BiomeAttributes biome = biomes[strongestBiomeIndex];
 
+        // Get the average of the heights.
         sumOfHeights /= count;
+
         int terrainHeight = Mathf.FloorToInt(sumOfHeights + solidGroundHeight);
 
 
-
-
+        //BiomeAttributes biome = biomes[index];
 
         /* BASIC TERRAIN PASS */
 
@@ -459,7 +471,7 @@ public class World : MonoBehaviour
                 if (Noise.Get2DPerlin(new Vector2(pos.x, pos.z), 0, biome.majorFloraPlacementScale) > biome.majorFloraPlacementThreshold)
                 {
 
-                    modifications.Enqueue(Structure.GenerateMajorFlora(biome.majorFloraIndex ,pos, biome.minHeight, biome.maxHeight));
+                    modifications.Enqueue(Structure.GenerateMajorFlora(biome.majorFloraIndex, pos, biome.minHeight, biome.maxHeight));
                 }
             }
 
@@ -571,18 +583,15 @@ public class Settings
 {
 
     [Header("Game Data")]
-    public string version;
+    public string version = "0.0.0.01";
 
     [Header("Performance")]
-    public int viewDistance;
-    public bool enableThreading;
-    public bool enableAnimatedChunks;
+    public int viewDistance = 8;
+    public bool enableThreading = true;
+    public bool enableAnimatedChunks = false;
 
     [Header("Controls")]
     [Range(0.1f, 10f)]
-    public float mouseSensitivity;
-
-    [Header("World Gen")]
-    public int seed;
+    public float mouseSensitivity = 2.0f;
 
 }

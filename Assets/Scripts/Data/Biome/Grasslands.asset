@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: Grasslands
   m_EditorClassIdentifier: 
   biomeName: Grasslands
-  offset: 1234
+  offset: 5326
   scale: 0.042
   terrainHeight: 22
   terrainScale: 0.15
   surfaceBlock: 3
   subSurfaceBlock: 5
   majorFloraIndex: 0
-  majorFloraZoneScale: 1.3
-  majorFloraZoneThreshold: 0.6
-  majorFloraPlacementScale: 15
+  majorFloraZoneScale: 1.45
+  majorFloraZoneThreshold: 0.7
+  majorFloraPlacementScale: 5
   majorFloraPlacementThreshold: 0.8
   placeMajorFlora: 1
-  maxHeight: 12
-  minHeight: 5
+  maxHeight: 20
+  minHeight: 12
   lodes:
   - nodeName: Dirt
     blockID: 5

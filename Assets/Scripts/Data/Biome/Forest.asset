@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Forest
   m_EditorClassIdentifier: 
   biomeName: Forest
-  offset: 87544
+  offset: 55432
   scale: 0.17
-  terrainHeight: 80
+  terrainHeight: 75
   terrainScale: 0.3
   surfaceBlock: 5
   subSurfaceBlock: 5

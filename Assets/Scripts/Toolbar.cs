@@ -17,7 +17,7 @@ public class Toolbar : MonoBehaviour
         foreach (UIItemSlot s in slots)
         {
 
-            ItemStack stack = new ItemStack(index, Random.Range(2, 65));
+            ItemStack stack = new ItemStack(index, Random.Range(100, 999));
             ItemSlot slot = new ItemSlot(s, stack);
             index++;
 
@@ -47,6 +47,18 @@ public class Toolbar : MonoBehaviour
         }
 
 
+    }
+
+    public byte getSlotItemIndex(byte id)
+    {
+        byte idx = 1;
+        foreach(UIItemSlot s in slots)
+        {
+            if (s.itemSlot.stack.id == id)
+                return idx;
+            idx++;
+        }
+        return 0;
     }
 
 }

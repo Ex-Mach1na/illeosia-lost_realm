@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ public static class Structure
                 return MakeTree(position, minTrunkHeight, maxTrunkHeight);
             case 1:
                 return MakeCacti(position, minTrunkHeight, maxTrunkHeight);
+            case 2:
+                return MakeStone(position, minTrunkHeight, maxTrunkHeight);
         }
         return new Queue<VoxelMod>();
     }
@@ -58,6 +61,38 @@ public static class Structure
 
         for (int i = 1; i < height; i++)
             queue.Enqueue(new VoxelMod(new Vector3(position.x, position.y + i, position.z), 12));
+
+        return queue;
+
+    }
+
+    public static Queue<VoxelMod> MakeStone(Vector3 position, int minHeight, int maxHeight)
+    {
+
+        Queue<VoxelMod> queue = new Queue<VoxelMod>();
+
+        int height = (int)(maxHeight * Noise.Get2DPerlin(new Vector2(position.x, position.z), 250f, 3f));
+        
+        if (height < 2)
+            height = 2;
+
+        int width = (int)Noise.Get2DPerlin(new Vector2(position.x, position.z), 250f, 2f) * height;
+        int yval = ((height + width) / 2) + height;
+
+        if (width < 1)
+            width *= 2;
+
+        for (int x = -3; x < 4; x++)
+        {
+            for (int y = 0; y < 7; y++)
+            {
+                for (int z = -3; z < 4; z++)
+                {
+                    queue.Enqueue(new VoxelMod(new Vector3(position.x + width, position.y + y + height, position.z + width), 10));
+                }
+            }
+        }
+        
 
         return queue;
 

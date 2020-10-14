@@ -143,7 +143,18 @@ public class Player : MonoBehaviour
 
             // Destroy block.
             if (Input.GetMouseButtonDown(0))
+            {
+                VoxelState temp = world.GetVoxelState(highlightBlock.position);
+                Debug.Log(temp.id);
+                byte gotIdx = toolbar.getSlotItemIndex(temp.id);
+                if(toolbar.slots[gotIdx].HasItem)
+                {
+                    toolbar.slots[gotIdx].itemSlot.stack.amount++;
+                }
+
                 world.GetChunkFromVector3(highlightBlock.position).EditVoxel(highlightBlock.position, 0);
+                
+            }
 
             // Place block.
             if (Input.GetMouseButtonDown(1))

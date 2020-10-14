@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Rin New 3d - Anime Style\Advance Unlit Shader\Editor\AdvanceUnlitCustomGUI.cs" />
+    <Compile Include="Assets\Editor\AtlasPacker.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/program files/unity/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -634,9 +634,6 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/ExMachina/Documents/Unity/illeosia - lost realm/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/ExMachina/Documents/Unity/illeosia - lost realm/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/ExMachina/Documents/Unity/illeosia - lost realm/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -652,11 +649,14 @@
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>C:/Users/ExMachina/Documents/Unity/illeosia - lost realm/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/ExMachina/Documents/Unity/illeosia - lost realm/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/ExMachina/Documents/Unity/illeosia - lost realm/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/ExMachina/Documents/Unity/illeosia - lost realm/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/ExMachina/Documents/Unity/illeosia - lost realm/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
